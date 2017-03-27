@@ -8,3 +8,4 @@ class Tokenizer:
 
     def generate_tokens(self):
         return self.text.split(' ')
+        
