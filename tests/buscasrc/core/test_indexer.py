@@ -2,11 +2,14 @@ import unittest
 
 from buscasrc.core.indexer import Indexer
 from buscasrc.core.database import Database
+from buscasrc.core.analyzer import Analyzer
+
 
 class TestIndexer(unittest.TestCase):
     def test_index_document(self):
         database = Database()
-        indexer = Indexer(database)
+        analyzer = Analyzer()
+        indexer = Indexer(database, analyzer)
 
         # tokens extracted from 2 docs:
         tokens_doc1 = [ ("conan", "ABC001", [1, 5 , 7])]
@@ -32,7 +35,8 @@ class TestIndexer(unittest.TestCase):
         ]
 
         database = Database()
-        indexer = Indexer(database)
+        analyzer = Analyzer()
+        indexer = Indexer(database, analyzer)
 
         indexer.index_documents(documents)
 
@@ -48,31 +52,3 @@ class TestIndexer(unittest.TestCase):
                 "read": {"DEF999": [1]}
             }
         )
-
-
-    def test_get_token_positions(self):
-        database = Database()
-        indexer = Indexer(database)
-
-        token = "conan"
-        tokens_list= ["conan", "barbarian", "axe", "conan", "sword"]
-
-        self.assertEquals(indexer.get_token_positions(token, tokens_list), [0,3])
-
-    def test_prepare_document(self):
-        database = Database()
-        indexer = Indexer(database)
-
-        document = {
-            "id": "ABC001",
-            "text": "Conan, the barbarian is a great HQ. Conan, #MustRead!"
-        }
-
-        self.assertListEqual(indexer.prepare_document(document),
-        [
-            ("conan","ABC001",[0,4]),
-            ("barbarian", "ABC001", [1]),
-            ("great", "ABC001", [2]),
-            ("hq", "ABC001", [3]),
-            ("mustread", "ABC001", [5])
-        ])
