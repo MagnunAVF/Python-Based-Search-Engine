@@ -8,3 +8,5 @@ class TestSearchEgine(unittest.TestCase):
         search_engine = SearchEngine("teste")
 
         self.assertEquals(search_engine.value, "teste")
+
+        

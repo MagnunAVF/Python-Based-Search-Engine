@@ -4,4 +4,5 @@ from buscasrc.core.database import Database
 
 
 class TestDatabase:
-    pass
+    def test_example(self):
+        raise NotImplementedError

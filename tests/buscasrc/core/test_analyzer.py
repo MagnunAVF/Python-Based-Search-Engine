@@ -21,6 +21,13 @@ class TestAnalyzer(unittest.TestCase):
             ("mustread", "ABC001", [5])
         ])
 
+
+    def test_prepare_text(self):
+        text = "Conan, the barbarian is a great HQ. Conan, #MustRead!"
+
+        self.assertListEqual(self.analyzer.prepare_text(text), ["conan", "barbarian", "great", "hq", "conan", "mustread"])
+
+
     def test_execute_before_filters(self):
 
         text = "Hello! Can i help you? Some things we have: rice, beans, chicken, ..."

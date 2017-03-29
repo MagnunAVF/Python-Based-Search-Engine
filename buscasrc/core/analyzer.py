@@ -15,16 +15,21 @@ class Analyzer:
 
 
     def prepare_document(self, document):
-        doc_text = self.execute_before_filters(document["text"])
-
-        tokenizer = Tokenizer(doc_text)
-        doc_tokens = tokenizer.generate_tokens()
-
-        doc_tokens = self.execute_after_filters(doc_tokens)
+        doc_tokens = self.prepare_text(document["text"])
 
         tokens_list = self.generate_structure(doc_tokens, document["id"])
 
         return tokens_list
+
+    def prepare_text(self, text):
+        result_text = self.execute_before_filters(text)
+
+        tokenizer = Tokenizer(result_text)
+        result_tokens = tokenizer.generate_tokens()
+
+        result_tokens = self.execute_after_filters(result_tokens)
+
+        return result_tokens
 
 
     def execute_before_filters(self, text):
