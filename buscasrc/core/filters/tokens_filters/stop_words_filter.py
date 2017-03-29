@@ -1,7 +1,7 @@
-"""
-    Filter that receive a token list and returns a tokens list without stop words
-"""
 class StopWordsFilter:
+    """
+        Filter that receive a token list and returns a tokens list without stop words
+    """
     stop_words = [
      "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any",
      "are", "aren't", "as", "at", "be", "because", "been", "before", "being", "below",

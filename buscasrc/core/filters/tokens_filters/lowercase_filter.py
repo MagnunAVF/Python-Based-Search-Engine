@@ -1,7 +1,7 @@
-"""
-    Filter that receive a token list and returns a tokens list with lowercase words
-"""
 class LowercaseFilter:
+    """
+        Filter that receive a token list and returns a tokens list with lowercase words
+    """
     def __init__(self, tokens_list):
         self.tokens_list = tokens_list
 

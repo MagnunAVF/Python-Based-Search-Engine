@@ -5,16 +5,17 @@ from buscasrc.core.filters.tokens_filters.lowercase_filter import LowercaseFilte
 from buscasrc.core.filters.tokens_filters.stop_words_filter import StopWordsFilter
 from buscasrc.core.tokenizer import Tokenizer
 
-"""
-    Entity that is responsable for search terms stored in the inverted index
-"""
+
 class Searcher:
+    """
+        Entity that is responsable for search terms stored in the inverted index
+    """
     def __init__(self, database):
         self.database = database
 
     def search_documents(self):
         inverted_index = database.inverted_index
-        
+
 
 
     #TODO extract the prepare_document and get_token_positions methods to an Analyzer Entity

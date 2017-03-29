@@ -5,7 +5,7 @@ from buscasrc.core.analyzer import Analyzer
 
 class Indexer:
     """
-    Entity that is responsable for index terms in the inverted index
+        Entity that is responsable for index terms in the inverted index
     """
     def __init__(self, database, analyzer):
         self.database = database
@@ -14,9 +14,9 @@ class Indexer:
 
     def index_document(self, document):
         """
-        Receives a tokens_list with the format:
-        for each token: token, document id, positions in document,
-        Ex.: ("conan",  document_id, [1, 5]), ... ]
+            Receives a tokens_list with the format:
+            for each token: token, document id, positions in document,
+            Ex.: ("conan",  document_id, [1, 5]), ... ]
         """
         inverted_index = self.database.inverted_index
 

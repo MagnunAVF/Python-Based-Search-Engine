@@ -1,9 +1,10 @@
 import re
 
-"""
-    Filter that receive a text and returns a text without punctuation
-"""
+
 class PunctuationFilter:
+    """
+        Filter that receive a text and returns a text without punctuation
+    """
     def __init__(self, text):
         self.text = text
 

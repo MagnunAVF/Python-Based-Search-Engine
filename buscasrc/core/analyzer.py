@@ -5,10 +5,11 @@ from buscasrc.core.filters.tokens_filters.lowercase_filter import LowercaseFilte
 from buscasrc.core.filters.tokens_filters.stop_words_filter import StopWordsFilter
 from buscasrc.core.tokenizer import Tokenizer
 
-"""
-    Entity that is responsable for index terms in the inverted index
-"""
+
 class Analyzer:
+    """
+        Entity that is responsable for prepare the document to index or to search
+    """
     def __init__(self):
         self.document = {}
 
