@@ -6,20 +6,19 @@ from buscasrc.core.analyzer import Analyzer
 
 
 class TestIndexer(unittest.TestCase):
+    def setUp(self):
+        self.database = Database()
+        self.indexer = Indexer(self.database, Analyzer())
+
     def test_index_document(self):
-        database = Database()
-        analyzer = Analyzer()
-        indexer = Indexer(database, analyzer)
+        document = {
+            "id": "DEF002",
+            "text": "Hello! Conan! Have you read Conan HQ? "
+        }
 
-        # tokens extracted from 2 docs:
-        tokens_doc1 = [ ("conan", "ABC001", [1, 5 , 7])]
-        tokens_doc2 = [ ("barbarian", "DEF002", [3, 10]),
-                        ("conan", "DEF002", [2])]
+        self.indexer.index_document(document)
 
-        indexer.index_document(tokens_doc1)
-        indexer.index_document(tokens_doc2)
-
-        self.assertEquals(database.inverted_index, {'conan': {'ABC001': [1, 5, 7], 'DEF002': [2]}, 'barbarian': {'DEF002': [3, 10]}})
+        self.assertEquals(self.database.inverted_index, {'hello': {'DEF002': [0]}, 'conan': {'DEF002': [1,3]}, 'read': {'DEF002': [2]}, 'hq': {'DEF002': [4]}})
 
 
     def test_index_documents(self):
@@ -34,14 +33,10 @@ class TestIndexer(unittest.TestCase):
             }
         ]
 
-        database = Database()
-        analyzer = Analyzer()
-        indexer = Indexer(database, analyzer)
-
-        indexer.index_documents(documents)
+        self.indexer.index_documents(documents)
 
         self.assertEquals(
-            database.inverted_index,
+            self.database.inverted_index,
             {
                 "barbarian": {"ABC001" : [1]},
                 "conan": {"ABC001" : [0, 4] , "DEF999": [2]},
