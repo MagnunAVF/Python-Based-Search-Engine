@@ -14,7 +14,7 @@ class Database:
 
     def index(self, terms, document):
         self._store_document(document)
-        self._index_terms(document['id'], terms)
+        self._index_terms(terms, document)
 
 
     def _store_document(self, document):
