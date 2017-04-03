@@ -5,7 +5,7 @@ from buscasrc.core.analyzer import Analyzer
 
 class Indexer:
     """
-        Entity that is responsable for index terms in the inverted index
+    Entity that is responsable for index terms in the inverted index
     """
     def __init__(self, database, analyzer):
         self.database = database

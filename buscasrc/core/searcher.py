@@ -5,19 +5,18 @@ from buscasrc.core.analyzer import Analyzer
 
 class Searcher:
     """
-        Entity that is responsable for search terms stored in the inverted index
+    Entity that is responsable for search terms stored in the inverted index
     """
     def __init__(self, database, analyzer):
         self.database = database
         self.analyzer = analyzer
 
     def search_documents(self, text):
-        inverted_index = database.inverted_index
+        search_tokens = self.analyzer.prepare_text(text)
 
-        searched_tokens = analyzer.prepare_text(text)
+        result_docs = self.database.search(search_tokens)
 
-        
-
+        return self.database.return_documents(result_docs)
 
     def order_results(self, result_docs):
         raise NotImplementedError

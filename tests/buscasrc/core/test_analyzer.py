@@ -2,6 +2,7 @@ import unittest
 
 from buscasrc.core.analyzer import Analyzer
 
+
 class TestAnalyzer(unittest.TestCase):
     def setUp(self):
         self.analyzer = Analyzer()
