@@ -1,6 +1,7 @@
 import unittest
 
-from buscasrc.core.filters.tokens_filters.lowercase_filter import LowercaseFilter
+from buscasrc.core.filters.tokens_filters.lowercase_filter import \
+    LowercaseFilter
 
 
 class TestLowercaseFilter(unittest.TestCase):
@@ -9,4 +10,5 @@ class TestLowercaseFilter(unittest.TestCase):
 
         lowercase_filter = LowercaseFilter(input_tokens)
 
-        self.assertEquals(lowercase_filter.filter_tokens(), ["rice", "apple", "conan", "utf", "barbarian"])
+        self.assertEquals(lowercase_filter.filter_tokens(), [
+            "rice", "apple", "conan", "utf", "barbarian"])

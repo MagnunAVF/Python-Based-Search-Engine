@@ -29,4 +29,6 @@ class TestSearcher(unittest.TestCase):
 
         result_docs = self.searcher.search_documents("The white fox")
         print(result_docs)
-        self.assertEquals(result_docs, ["The fox run.", "The fox is red.", "The horse and the fox are white"])
+        self.assertEquals(sorted(result_docs), [
+            "The fox is red.", "The fox run.",
+            "The horse and the fox are white"])

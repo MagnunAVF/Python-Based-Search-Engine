@@ -13,6 +13,6 @@ setup:
 	@pip install -r requirements_dev.txt
 
 test:
-	@py.test tests --cov-report term-missing --cov-report xml --cov=py_search_engine --pep8 --flakes
+	@py.test tests --cov-report term-missing --cov-report xml --cov=buscasrc --pep8 --flakes
 
 .PHONY: help, install, setup, test

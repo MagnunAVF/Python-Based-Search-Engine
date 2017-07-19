@@ -18,8 +18,11 @@ class TestIndexer(unittest.TestCase):
 
         self.indexer.index_document(document)
 
-        self.assertEquals(self.database.inverted_index, {'hello': {'DEF002': [0]}, 'conan': {'DEF002': [1,3]}, 'read': {'DEF002': [2]}, 'hq': {'DEF002': [4]}})
-
+        self.assertEquals(self.database.inverted_index, {
+            'hello': {'DEF002': [0]},
+            'conan': {'DEF002': [1, 3]},
+            'read': {'DEF002': [2]},
+            'hq': {'DEF002': [4]}})
 
     def test_index_documents(self):
         documents = [
@@ -38,12 +41,12 @@ class TestIndexer(unittest.TestCase):
         self.assertEquals(
             self.database.inverted_index,
             {
-                "barbarian": {"ABC001" : [1]},
-                "conan": {"ABC001" : [0, 4] , "DEF999": [2]},
-                "great": {"ABC001" : [2]},
+                "barbarian": {"ABC001": [1]},
+                "conan": {"ABC001": [0, 4], "DEF999": [2]},
+                "great": {"ABC001": [2]},
                 "hello": {"DEF999": [0]},
-                "hq": {"ABC001" : [3], "DEF999": [3]},
-                "mustread": {"ABC001" : [5]},
+                "hq": {"ABC001": [3], "DEF999": [3]},
+                "mustread": {"ABC001": [5]},
                 "read": {"DEF999": [1]}
             }
         )
