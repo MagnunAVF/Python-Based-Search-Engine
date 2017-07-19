@@ -1,6 +1,6 @@
 # Python Search Engine
 
-[![Build Status](https://travis-ci.org/dwayhs/python-search-engine.svg?branch=master)](https://travis-ci.org/dwayhs/python-search-engine)
+[![Build Status](https://travis-ci.org/MagnunAVF/Python-Based-Search-Engine-V2.svg?branch=master)](https://travis-ci.org/MagnunAVF/Python-Based-Search-Engine-V2)
 
 This project is intended for educational purposes.
 
