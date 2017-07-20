@@ -55,4 +55,4 @@ We use [SemVer](http://semver.org/) for versioning.
 
 # License
 
-This project is [Opensource](https://opensource.org/).
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
