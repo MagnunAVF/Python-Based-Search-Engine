@@ -23,10 +23,8 @@ class StopWordsFilter:
      "your", "yours", "yourself", "yourselves"
      ]
 
-
     def __init__(self, tokens_list):
         self.tokens_list = tokens_list
-
 
     def filter_tokens(self):
         return [token for token in self.tokens_list if token not in self.stop_words]

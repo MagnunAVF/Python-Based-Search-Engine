@@ -26,7 +26,6 @@ class Database:
 
         return result_docs
 
-
     def return_documents(self, docs_with_positions):
         docs = []
 

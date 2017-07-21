@@ -13,7 +13,6 @@ class Analyzer:
     def __init__(self):
         self.text = {}
 
-
     def prepare_text(self, text):
         result_text = self._execute_before_filters(text)
 
@@ -24,13 +23,11 @@ class Analyzer:
 
         return self._generate_tokens_with_positions(result_tokens)
 
-
     def _execute_before_filters(self, text):
         punctuation_filter = PunctuationFilter(text)
         result_text = punctuation_filter.filter_text()
 
         return result_text
-
 
     def _execute_after_filters(self, tokens_list):
         lowercase_filter = LowercaseFilter(tokens_list)
@@ -48,7 +45,6 @@ class Analyzer:
 
         return result_tokens
 
-
     def _generate_tokens_with_positions(self, tokens_list):
         result_tokens_list = []
         tokens_added = []
@@ -59,7 +55,6 @@ class Analyzer:
                 result_tokens_list.append( (token, self._get_token_positions(token, tokens_list)) )
 
         return result_tokens_list
-
 
     def _get_token_positions(self, token, token_list):
         positions = []
