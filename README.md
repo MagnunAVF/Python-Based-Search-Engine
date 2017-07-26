@@ -1,6 +1,7 @@
 # Python Search Engine
 
 [![Build Status](https://travis-ci.org/MagnunAVF/Python-Based-Search-Engine.svg?branch=master)](https://travis-ci.org/MagnunAVF/Python-Based-Search-Engine)
+[![BCH compliance](https://bettercodehub.com/edge/badge/MagnunAVF/Python-Based-Search-Engine?branch=master)](https://bettercodehub.com/)
 
 A Simple Search Engine.
 This project is intended for educational purposes.
